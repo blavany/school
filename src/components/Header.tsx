@@ -1,32 +1,29 @@
 import React from 'react';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from './images/logo/b4logo.png';
+import logo from './images/logo/B4 School Logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const navItems = [
-    { name: 'Home', href: '/', color: 'text-red-500' },
-    { name: 'Classes', href: '/classes', color: 'text-orange-500' },
-    { name: 'Teachers', href: '/teachers', color: 'text-yellow-500' },
-    { name: 'Portfolio', href: '/portfolio', color: 'text-green-500' },
-    { name: 'Contact', href: '/contact', color: 'text-blue-500' },
+    { name: 'Home', href: '/', color: 'text-red-1000', hover: 'hover:text-red-700' },
+    { name: 'About', href: '/about', color: 'text-orange-1000', hover: 'hover:text-orange-700' },
+    { name: 'Activities', href: '/activities', color: 'text-pink-1000', hover: 'hover:text-pink-700' },
+    // { name: 'Locations', href: '/locations', color: 'text-purple-1000', hover: 'hover:text-purple-700' },
+    { name: 'Classes', href: '/classes', color: 'text-green-1000', hover: 'hover:text-green-700' },
+    { name: 'Teachers', href: '/teachers', color: 'text-yellow-1000', hover: 'hover:text-yellow-700' },
+    { name: 'Portfolio', href: '/portfolio', color: 'text-blue-1000', hover: 'hover:text-blue-700' },
+    { name: 'Contact', href: '/contact', color: 'text-indigo-1000', hover: 'hover:text-indigo-700' },
   ];
 
   return (
-    <header className="fixed w-full bg-blue-100 shadow-md z-50">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="fixed w-full bg-white shadow-md z-50">
+      <nav className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <GraduationCap className="h-8 w-8 text-blue-300" />
-              <img
-                src={logo}
-                alt="B4School Logo"
-                className="h-14 w-14"
-              />
-            </div>
+            <img src={logo} alt="B4School Logo" className="h-auto max-w-full max-h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,7 +32,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-gray-600 hover:${item.color} transition-colors duration-200`}
+                className={`text-gray-700 font-semibold transition-colors duration-300 ${item.hover}`}
               >
                 {item.name}
               </Link>
@@ -62,7 +59,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`block text-gray-600 hover:${item.color} transition-colors duration-200`}
+                className={`block text-gray-700 font-semibold transition-colors duration-300 ${item.hover}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

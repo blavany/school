@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const Teachers = () => {
   const teachers = [
@@ -77,6 +78,7 @@ const Teachers = () => {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, Brain, Utensils, Clock, Shield, Users } from 'lucide-react';
+import backgroundImage from './images/logo/ourservicebgcolor.jpg'; // Import local image
 
 const Services = () => {
   const services = [
@@ -43,14 +44,14 @@ const Services = () => {
 
   return (
     <section
-      className="py-20 relative"
-      style={{
-        backgroundImage: "url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-cartoon-simple-kindergarten-starting-school-image_13536.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    className="py-20"
+    style={{
+      backgroundImage: `url(${backgroundImage})`, 
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    }}
+  >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-20"></div>
       <div className="container mx-auto px-4 relative">

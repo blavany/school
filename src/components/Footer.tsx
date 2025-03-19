@@ -1,22 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, GraduationCap } from 'lucide-react';
-import logo from './images/logo/b4logo.png';
+import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import logo from './images/logo/B4 School Logo.png';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-4 gap-8">
-          {/* About */}
+          {/* About Section */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <GraduationCap className="h-8 w-8 text-blue-400" />
+            <div className="flex items-center justify-left mb-6"> 
               <img
-                src={logo} alt="B4School Logo" 
-             
-              className="h-14 w-14"/>
-              {/* <span className="text-2xl font-bold text-blue-400">B4School</span> */}
+                src={logo}
+                alt="B4School Logo"
+                className="h-auto max-w-full max-h-32 w-auto" 
+              />
             </div>
             <p className="text-gray-400">
               Providing quality early education and childcare services in a nurturing environment.
@@ -30,6 +29,16 @@ const Footer = () => {
               <li>
                 <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200">
                   Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link to="/activities" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  Activities
                 </Link>
               </li>
               <li>
@@ -55,18 +64,16 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="text-lg font-bold mb-6">Contact Info</h3>
             <ul className="space-y-3 text-gray-400">
-              <li>123 Education Street</li>
-              <li>Learning City, LC 12345</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Email: info@b4school.com</li>
+              <li>28 Princeton Drive Syosset</li>
+              <li>New York  USA 11791</li>
+              <li>Phone: +1 (315) 402-1234</li>
+              <li>contact@b4-school.com</li>
             </ul>
           </div>
 
-          {/* Social Media */}
           <div>
             <h3 className="text-lg font-bold mb-6">Follow Us</h3>
             <div className="flex space-x-4">
@@ -86,6 +93,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Footer Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} B4School. All rights reserved.</p>
         </div>

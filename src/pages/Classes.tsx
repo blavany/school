@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, Clock, Users } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const Classes = () => {
   const classes = [
@@ -65,6 +66,7 @@ const Classes = () => {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

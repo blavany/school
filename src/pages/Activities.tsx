@@ -1,6 +1,7 @@
 import React from 'react';
 import { Palette, Music, BookOpen, Gamepad2, Bus, Camera } from 'lucide-react';
-import backgroundImage from './images/logo/activitybgcolor.jpg'; // Import local image
+import Footer from '../components/Footer';
+// import backgroundImage from './images/logo/activitybgcolor.jpg'; // Import local image
 
 const Activities = () => {
   const activities = [
@@ -46,7 +47,7 @@ const Activities = () => {
     <section
       className="py-20"
       style={{
-        backgroundImage: `url(${backgroundImage})`, 
+        // backgroundImage: `url(${backgroundImage})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -75,7 +76,9 @@ const Activities = () => {
             </div>
           ))}
         </div>
+        
       </div>
+      <Footer/>
     </section>
   );
 };

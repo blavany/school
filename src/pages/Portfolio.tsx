@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/Footer';
 
 const Portfolio = () => {
   const portfolioItems = [
@@ -8,12 +9,12 @@ const Portfolio = () => {
       image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80',
       description: 'Annual art exhibition showcasing our students'
     },
-    // {
-    //   title: 'Sports Day',
-    //   category: 'Physical Activities',
-    //   image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80',
-    //   description: 'Fun-filled sports day with various physical activities and games.'
-    // },
+    {
+      title: 'Sports Day',
+      category: 'Physical Activities',
+      image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80',
+      description: 'Fun-filled sports day with various physical activities and games.'
+    },
     {
       title: 'Music Performance',
       category: 'Performing Arts',
@@ -35,7 +36,7 @@ const Portfolio = () => {
     {
       title: 'Reading Week',
       category: 'Literacy',
-      image: 'https://images.unsplash.com/photo-1524595771150-f4c4f3a41e04?auto=format&fit=crop&w=800&q=80',
+      image: 'https://www.precious-learners.com/wp-content/uploads/2022/10/310411244_623704189161282_798278585129646819_n.jpg',
       description: 'Promoting literacy through storytelling and reading activities.'
     }
   ];
@@ -67,6 +68,7 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

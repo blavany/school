@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const Contact = () => {
   const [formData, setFormData] = React.useState({
@@ -37,7 +38,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-800">Address</h3>
-                    <p className="text-gray-600">123 Education Street<br />Learning City, LC 12345</p>
+                    <p className="text-gray-600">28 Princeton Drive Syosset<br />, New York USA 11791</p>
                   </div>
                 </div>
                 
@@ -45,7 +46,7 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-800">Phone</h3>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <p className="text-gray-600">+1 (315) 402-1234</p>
                   </div>
                 </div>
                 
@@ -53,7 +54,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-800">Email</h3>
-                    <p className="text-gray-600">info@b4school.com</p>
+                    <p className="text-gray-600">contact@b4-school.com</p>
                   </div>
                 </div>
                 
@@ -65,6 +66,7 @@ const Contact = () => {
                       Monday - Friday: 8:00 AM - 4:00 PM<br />
                       Saturday: 9:00 AM - 1:00 PM<br />
                       Sunday: Closed
+
                     </p>
                   </div>
                 </div>
@@ -145,6 +147,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
