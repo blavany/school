@@ -8,6 +8,11 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Activities from './pages/Activities';
+import Locations from './pages/Locations';
+import Shop from './pages/Shop';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsappAppButton';
 function App() {
   return (
     <Router>
@@ -18,11 +23,18 @@ function App() {
           <Route path="/classes" element={<Classes />} />
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/shops" element={<Shop />} />
+
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/activities" element={<Activities />} />
 
         </Routes>
+       
+    
+        <ScrollToTop />
+        <WhatsAppButton />
       </div>
     </Router>
   );

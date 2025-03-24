@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heart, Brain, Utensils, Clock, Shield, Users } from 'lucide-react';
-import backgroundImage from './images/logo/ourservicebgcolor.jpg'; // Import local image
+import backgroundImage from './images/logo/oursevice.avif'; // Import local image
 
 const Services = () => {
   const services = [
@@ -57,7 +57,7 @@ const Services = () => {
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-yellow-900 mb-4">Our Services</h2>
-<p className="text-white max-w-3xl mx-auto">
+<p className="text-black max-w-4xl mx-auto">
   Comprehensive childcare services designed to support your child's development and your family's needs.
 </p>
 

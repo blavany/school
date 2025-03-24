@@ -3,12 +3,12 @@ import { Heart, Brain, Star } from 'lucide-react';
 
 const About = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="about-section" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <img
-              src="https://media.istockphoto.com/id/1402700264/photo/teacher-with-a-group-of-elementary-students-playing-with-toy-blocks.jpg?b=1&s=612x612&w=0&k=20&c=4skoIVEqNcTNfxlvnxqUQhL8uMpBkiClg9KPlAuqhr0="
+              src="https://images.unsplash.com/photo-1543248939-ff40856f65d4?auto=format&fit=crop&w=800&q=80"
               alt="Children playing"
               className="rounded-lg shadow-xl"
             />

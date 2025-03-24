@@ -12,7 +12,7 @@ const Teachers = () => {
       experience: '15+ years',
       specialization: 'Early Childhood Development',
       email: 'sarah.j@b4school.com',
-      phone: '(555) 123-4567'
+      // phone: '(555) 123-4567'
     },
     {
       name: 'Michael Chen',
@@ -22,7 +22,7 @@ const Teachers = () => {
       experience: '8 years',
       specialization: 'Creative Arts',
       email: 'michael.c@b4school.com',
-      phone: '(555) 123-4568'
+      // phone: '(555) 123-4568'
     },
     {
       name: 'Emily Rodriguez',
@@ -32,7 +32,7 @@ const Teachers = () => {
       experience: '10 years',
       specialization: 'Early Music Education',
       email: 'emily.r@b4school.com',
-      phone: '(555) 123-4569'
+      // phone: '(555) 123-4569'
     }
   ];
 
@@ -66,10 +66,10 @@ const Teachers = () => {
                       </a>
                     </div>
                     <div className="flex items-center">
-                      <Phone className="w-5 h-5 text-blue-600 mr-2" />
-                      <a href={`tel:${teacher.phone}`} className="hover:text-blue-600">
+                      {/* <Phone className="w-5 h-5 text-blue-600 mr-2" /> */}
+                      {/* <a href={`tel:${teacher.phone}`} className="hover:text-blue-600">
                         {teacher.phone}
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </div>

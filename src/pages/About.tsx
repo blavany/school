@@ -4,19 +4,19 @@ import Footer from '../components/Footer';
 const About = () => {
   const testimonials = [
     {
-      image: "https://via.placeholder.com/150",
+      image: "https://media.istockphoto.com/id/1164370754/photo/school-supplies-on-blackboard-back-to-school-concept.jpg?s=612x612&w=0&k=20&c=-bxtemetxdvGZuHlQ__SYZwYA9H5ydXJrV7EhStafL4=",
       content: "B4-School has truly transformed my child's learning experience. The teachers are amazing!",
-      name: "Parent A",
+      name: "Pooja",
     },
     {
-      image: "https://via.placeholder.com/150",
+      image: "https://media.istockphoto.com/id/802352810/photo/top-view-of-a-large-group-of-school-or-office-supplies-on-wooden-table.jpg?s=612x612&w=0&k=20&c=SZ9-27uZDR-eAt3T3nH81lXpKlTrue1R3Z5_bNbsyXU=",
       content: "The nurturing environment at B4-School helped my child develop confidence and curiosity.",
-      name: "Parent B",
+      name: "Aditya",
     },
     {
-      image: "https://via.placeholder.com/150",
+      image: "https://media.istockphoto.com/id/507487061/photo/back-to-school.jpg?s=612x612&w=is&k=20&c=AtWNBatG5sVAM07ZCTByLaZsrhren5OXMXeb8UsLop0=",
       content: "I highly recommend B4-School for their dedication to quality education and care.",
-      name: "Parent C",
+      name: "Shivaji",
     },
   ];
 

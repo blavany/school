@@ -53,13 +53,14 @@ const Activities = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Our Activities</h2>
-          <p className="text-white max-w-4xl mx-auto">
-            Engaging activities designed to nurture creativity, learning, and development in a fun environment.
-          </p>
-        </div>
+       <div className="pt-20 bg-gray-50">
+       <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto py-16">
+   <h1 className="text-4xl font-bold text-gray-800 mb-4">Activities</h1>
+   <p className="text-gray-600">
+     Engaging activities designed to nurture creativity, learning, and development in a fun environment.
+   </p>
+ </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activities.map((activity) => (
             <div

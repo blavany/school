@@ -6,7 +6,7 @@ import logo from './images/logo/B4 School Logo.png';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-3 py-6">
         <div className="grid md:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
@@ -14,7 +14,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="B4School Logo"
-                className="h-auto max-w-full max-h-32 w-auto" 
+                className="h-auto max-w-full max-h-36 w-auto" 
               />
             </div>
             <p className="text-gray-400">
@@ -95,7 +95,7 @@ const Footer = () => {
 
         {/* Footer Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} B4School. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} B4School. All rights reserved </p>
         </div>
       </div>
     </footer>

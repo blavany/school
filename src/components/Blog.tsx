@@ -9,7 +9,7 @@ const Blog = () => {
       date: 'March 15, 2024'
     },
     {
-      image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=800&q=80',
+      image: 'https://www.kidz.priyalallsphotography.in/activities/co-curricular/large/1.jpg',
       title: 'Creative Activities for Preschoolers',
       excerpt: 'Fun and educational activities to try with your preschooler at home.',
       date: 'March 10, 2024'
