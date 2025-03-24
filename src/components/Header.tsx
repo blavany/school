@@ -11,7 +11,7 @@ const Header = () => {
     { name: 'About', href: '/about', color: 'text-orange-1000', hover: 'hover:text-orange-700' },
     { name: 'Activities', href: '/activities', color: 'text-pink-1000', hover: 'hover:text-pink-700' },
     { name: 'Locations', href: '/locations', color: 'text-purple-1000', hover: 'hover:text-purple-700' },
-    { name: 'Shop', href: '/shops', color: 'text-brown-1000', hover: 'hover:text-purple-700' },
+    // { name: 'Shop', href: '/shops', color: 'text-brown-1000', hover: 'hover:text-purple-700' },
 
     { name: 'Classes', href: '/classes', color: 'text-green-1000', hover: 'hover:text-green-700' },
     { name: 'Teachers', href: '/teachers', color: 'text-yellow-1000', hover: 'hover:text-yellow-700' },
@@ -24,8 +24,8 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-2 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="B4School Logo" className="h-auto max-w-full max-h-20 w-auto" />
-        </Link>
+  <img src={logo} alt="B4School Logo" className="h-auto max-w-full max-h-20 w-auto ml-16" />
+</Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
