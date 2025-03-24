@@ -14,7 +14,7 @@ const About = () => {
       name: "Aditya",
     },
     {
-      image: "https://media.istockphoto.com/id/507487061/photo/back-to-school.jpg?s=612x612&w=is&k=20&c=AtWNBatG5sVAM07ZCTByLaZsrhren5OXMXeb8UsLop0=",
+      image: "https://www.kindertap.com/assets/images/features/kindertap-app-medias.jpg",
       content: "I highly recommend B4-School for their dedication to quality education and care.",
       name: "Shivaji",
     },

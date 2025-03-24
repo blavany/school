@@ -41,12 +41,12 @@ const Header = () => {
         </div>
 
         {/* Contact Box */}
-        <div className="hidden md:flex items-center bg-transparent border border-gray-200 px--9 py-2 rounded-lg shadow-sm">
+        {/* <div className="hidden md:flex items-center bg-transparent border border-gray-200 px--9 py-2 rounded-lg shadow-sm">
    
                       <Phone className="w-4 h-4 text-blue-600 mr-2" />
 
           <span className="ml-1 text-gray-600">+1(315)402-1234</span>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Button */}
         <button
