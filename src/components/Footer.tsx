@@ -95,8 +95,18 @@ const Footer = () => {
 
         {/* Footer Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} B4School. All rights reserved </p>
-        </div>
+  <p>
+    &copy; {new Date().getFullYear()} B4School. All rights reserved by{' '}
+    <a 
+      href="https://niranthra.com" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-blue-400 hover:text-white transition-colors duration-200"
+    >
+      niranthra.com
+    </a>
+  </p>
+</div>
       </div>
     </footer>
   );

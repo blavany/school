@@ -67,7 +67,7 @@ const Hero = () => {
                   <span className="text-white"> to B4School</span>
                 </h1>
               ) : (
-                // Second Slide: Normal text
+               
                 <h1 className="text-5xl md:text-6xl font-bold mb-4">{slide.title}</h1>
               )}
               <p className="text-xl md:text-2xl">{slide.subtitle}</p>

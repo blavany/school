@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heart, Brain, Utensils, Clock, Shield, Users } from 'lucide-react';
-import backgroundImage from './images/logo/oursevice.avif'; // Import local image
+import backgroundImage from './images/logo/child-flying-pencil_968517-196904.avif'; 
 
 const Services = () => {
   const services = [

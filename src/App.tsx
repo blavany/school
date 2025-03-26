@@ -13,6 +13,7 @@ import Shop from './pages/Shop';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsappAppButton';
+import ScrollTop from './components/ScrollTop';
 function App() {
   return (
     <Router>
@@ -34,6 +35,7 @@ function App() {
        
     
         <ScrollToTop />
+        <ScrollTop/>
         <WhatsAppButton />
       </div>
     </Router>

@@ -1,3 +1,9 @@
+@import url('https://fonts.cdnfonts.com/css/winky-sans');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-font {
+  font-family: 'Winky Sans', sans-serif;
+}

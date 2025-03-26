@@ -31,26 +31,27 @@ const About = () => {
   };
 
   return (
-    <div className="pt-20 bg-gray-50">
+    <div className="pt-20 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 min-h-screen text-white">
       <div className="container mx-auto px-4 py-16">
         {/* About Section */}
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">About Us</h1>
-        <p className="text-gray-600 text-lg leading-relaxed mb-8">
-          B4-School is a premier learning center that fosters a nurturing and engaging learning environment for young children. Our experienced educators understand the unique ways in which children learn and are dedicated to creating programs that stimulate curiosity and encourage intellectual growth.
-          At B4-School, we believe in maximizing each child's potential through tailored educational experiences that inspire a lifelong love for learning.
+        <h1 className="text-5xl font-extrabold text-center mb-12 text-white-300">About Us</h1>
+        <p className="text-lg leading-relaxed mb-8 text-white text-center px-6 md:px-24">
+          B4-School is a premier learning center that fosters a nurturing and engaging learning environment for young children. 
+          Our experienced educators understand the unique ways in which children learn and are dedicated to creating programs that 
+          stimulate curiosity and encourage intellectual growth.
         </p>
 
         {/* Mission and Vision Section */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Vision</h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+          <div className="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 className="text-3xl font-bold text-blue-600 mb-4">Vision</h2>
+            <p className="text-lg leading-relaxed">
               Education is the passport to the world. No child should fall behind academically.
             </p>
           </div>
-          <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Mission</h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+          <div className="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 className="text-3xl font-bold text-pink-600 mb-4">Mission</h2>
+            <p className="text-lg leading-relaxed">
               We strive to provide a safe and learning environment for preschool-age children to reach their maximum potential.
             </p>
           </div>
@@ -58,8 +59,8 @@ const About = () => {
 
         {/* Testimonials Section */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Testimonials</h2>
-          <div className="relative overflow-hidden">
+          <h2 className="text-4xl font-bold text-center text-white-300 mb-8">Testimonials</h2>
+          <div className="relative overflow-hidden bg-white p-8 rounded-lg shadow-lg text-gray-800">
             {/* Sliding Box */}
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -68,15 +69,15 @@ const About = () => {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-full md:w-[300px] bg-white shadow-md rounded-lg p-6 mx-auto"
+                  className="flex-shrink-0 w-full md:w-[300px] p-6 mx-auto text-center"
                 >
                   <img
                     src={testimonial.image}
                     alt={`Testimonial ${index}`}
                     className="w-full h-[150px] object-cover rounded-md mb-4"
                   />
-                  <p className="text-gray-600 text-lg leading-relaxed mb-4">{testimonial.content}</p>
-                  <h3 className="text-gray-800 font-bold">{testimonial.name}</h3>
+                  <p className="text-lg leading-relaxed mb-4">{testimonial.content}</p>
+                  <h3 className="text-blue-600 font-bold">{testimonial.name}</h3>
                 </div>
               ))}
             </div>
@@ -84,13 +85,13 @@ const About = () => {
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-[50%] transform -translate-y-[50%] bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+              className="absolute left-2 top-[50%] transform -translate-y-[50%] bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600"
             >
               &#8592;
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-[50%] transform -translate-y-[50%] bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700"
+              className="absolute right-2 top-[50%] transform -translate-y-[50%] bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600"
             >
               &#8594;
             </button>

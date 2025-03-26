@@ -45,7 +45,7 @@ const Activities = () => {
 
   return (
     <section
-      className="py-20"
+      className="py-18"
       style={{
         // backgroundImage: `url(${backgroundImage})`, 
         backgroundSize: 'cover',
@@ -53,10 +53,10 @@ const Activities = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-       <div className="pt-20 bg-gray-50">
-       <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto py-16">
-   <h1 className="text-4xl font-bold text-gray-800 mb-4">Activities</h1>
-   <p className="text-gray-600">
+        <div className="pt-20 bg-gray-50">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Activities</h1>
+   <p className="text-center text-gray-600">
      Engaging activities designed to nurture creativity, learning, and development in a fun environment.
    </p>
  </div>
@@ -77,10 +77,14 @@ const Activities = () => {
             </div>
           ))}
         </div>
-        
+        <div className="mt-16">
+  <Footer />
+</div>
+
       </div>
-      <Footer/>
+    
     </section>
+    
   );
 };
 
