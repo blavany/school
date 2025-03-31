@@ -1,38 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Footer from '../components/Footer';
+import image1 from '../components/images/logo/d3493ce8-9306-4067-83e3-7f1a671b2220-bottle.png';
+import image2 from '../components/images/logo/lego-76261-spider-man-final-battle.webp';
+import image3 from '../components/images/logo/firstreadersetof6.webp';
+import image4 from '../components/images/logo/81ap+We87nL.jpg';
 
 const Shop = () => {
-  const [countdown, setCountdown] = useState('');
-
-  useEffect(() => {
-    const countDownDate = new Date("March 31, 2025 00:00:00").getTime();
-
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      if (distance < 0) {
-        clearInterval(interval);
-        setCountdown("EXPIRED");
-      } else {
-        setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const products = [
+    { id: 1, name: "Bottle", price: "$15", image: image1 },
+    { id: 2, name: "Lego Set", price: "$25", image: image2 },
+    { id: 3, name: "Kids Story Book", price: "$10", image: image3 },
+    { id: 4, name: "Toy Car", price: "$12", image: image4 }
+  ];
 
   return (
-    <div className="flex items-center justify-center h-screen bg-cover bg-center" style={{ backgroundImage: "url('/path/to/your/background.jpg')" }}>
-      <div className="text-center bg-white bg-opacity-80 p-8 rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold text-gray-800">Coming Soon</h1>
-        <p className="mt-4 text-gray-600">We are working to launch W3 School Shop  . Stay tuned!</p>
-        <div className="mt-6 text-lg font-semibold">{countdown}</div>
+    <div className="pt-20 bg-gray-50">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Shop</h1>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl mx-auto">
+          {products.map((product) => (
+            <div key={product.id} className="bg-white p-6 rounded-lg shadow-md text-center flex flex-col items-center">
+              <img src={product.image} alt={product.name} className="w-48 h-48 object-cover mb-4 rounded-lg" />
+              <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+              <p className="text-gray-600">{product.price}</p>
+              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Buy Now</button>
+            </div>
+          ))}
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

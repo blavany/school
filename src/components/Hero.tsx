@@ -2,7 +2,7 @@ import React from 'react';
 import Slide1 from './images/logo/header image1.avif'; 
 import Slide2 from './images/logo/headerimage2.jpg';
 import Slide3 from './images/logo/headerimage4.jpg';
-
+import { motion, AnimatePresence } from 'framer-motion';
 const Hero = () => {
   const slides = [
     {
@@ -57,7 +57,7 @@ const Hero = () => {
           <div className="relative h-full flex items-center justify-center text-center">
             <div className="text-white px-4">
               {index === 0 ? (
-                // First Slide: "Welcome" with different colors
+               
                 <h1 className="text-5xl md:text-6xl font-bold mb-4">
                   {["W", "e", "l", "c", "o", "m", "e"].map((letter, i) => (
                     <span key={i} className={`${colors[i]} drop-shadow-md`}>

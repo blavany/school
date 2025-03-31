@@ -1,7 +1,7 @@
 import React from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Star, Heart, Sun, MapPin, Book, Users, Image, Mail,Newspaper } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import logo from './images/logo/B4 School Logo.png';
 
 const Header = () => {
@@ -11,41 +11,118 @@ const Header = () => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
 
   const navItems = [
-    { name: 'Home', href: '/', hover: 'hover:text-red-700' },
-    { name: 'About', href: '/about', hover: 'hover:text-orange-700' },
-    { name: 'Activities', href: '/activities', hover: 'hover:text-pink-700' },
-    { name: 'Locations', href: '/locations', hover: 'hover:text-purple-700' },
-    { name: 'Classes', href: '/classes', hover: 'hover:text-green-700' },
-    { name: 'Teachers', href: '/teachers', hover: 'hover:text-yellow-700' },
-    { name: 'Portfolio', href: '/portfolio', hover: 'hover:text-blue-700' },
-    { name: 'Contact', href: '/contact', hover: 'hover:text-indigo-700' },
+    { name: 'Home', href: '/', hover: 'hover:text-red-700', icon: <Heart className="w-4 h-4" /> },
+    { name: 'About', href: '/about', hover: 'hover:text-orange-700', icon: <Star className="w-4 h-4" /> },
+    { name: 'Activities', href: '/activities', hover: 'hover:text-pink-700', icon: <Sun className="w-4 h-4" /> },
+    { name: 'Locations', href: '/locations', hover: 'hover:text-purple-700', icon: <MapPin className="w-4 h-4" /> },
+    // { name: 'Classes', href: '/classes', hover: 'hover:text-green-700', icon: <Book className="w-4 h-4" /> },
+    // { name: 'Teachers', href: '/teachers', hover: 'hover:text-yellow-700', icon: <Users className="w-4 h-4" /> },
+     { name: 'Shop', href: '/shop', hover: 'hover:text-yellow-700', icon: <Users className="w-4 h-4" /> },
+
+    { name: 'News', href: '/news', hover: 'hover:text-blue-700', icon: <Newspaper className="w-4 h-4" /> },
+    { name: 'Contact', href: '/contact', hover: 'hover:text-indigo-700', icon: <Mail className="w-4 h-4" /> },
   ];
 
-  // Animation variants for the kids
-  const kidsVariants = {
-    animate: {
-      x: [0, 10, 0],
-      y: [0, -5, 0],
+  // Kids images for animation
+  const kidsImages = [
+    {
+      url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=100&h=100&q=80",
+      position: "left-0",
+      delay: 0
+    },
+    {
+      url: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=100&h=100&q=80",
+      position: "left-1/4",
+      delay: 1
+    },
+    {
+      url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=100&h=100&q=80",
+      position: "right-1/4",
+      delay: 2
+    },
+    {
+      url: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=100&h=100&q=80",
+      position: "right-0",
+      delay: 3
+    }
+  ];
+
+  // Kids animation variants
+  const kidsAnimation = {
+    initial: (delay: number) => ({
+      y: -100,
+      opacity: 0,
       transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
+        delay: delay * 0.2
       }
+    }),
+    animate: (delay: number) => ({
+      y: [0, -10, 0],
+      opacity: 1,
+      transition: {
+        y: {
+          repeat: Infinity,
+          duration: 2,
+          delay: delay * 0.2,
+          ease: "easeInOut"
+        },
+        opacity: {
+          duration: 0.5,
+          delay: delay * 0.2
+        }
+      }
+    })
+  };
+
+  // Floating animation for decorative elements
+  const floatingAnimation = {
+    y: [-10, 10],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatType: "reverse",
+      ease: "easeInOut"
     }
   };
 
-  // Phone number animation variants
-  const phoneBoxVariants = {
+  // Bouncing animation for logo
+  const logoAnimation = {
+    scale: [1, 1.1, 1],
+    rotate: [0, 5, -5, 0],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut"
+    }
+  };
+
+  // Navigation item hover animation
+  const navItemAnimation = {
     hover: {
-      scale: 1.05,
+      scale: 1.1,
+      y: -5,
       transition: {
-        duration: 0.2,
         type: "spring",
-        stiffness: 300
+        stiffness: 400,
+        damping: 10
       }
     },
     tap: {
       scale: 0.95
+    }
+  };
+
+  // Phone button animation
+  const phoneAnimation = {
+    hover: {
+      scale: 1.05,
+      rotate: [0, -5, 5, 0],
+      transition: {
+        duration: 0.3,
+        type: "spring",
+        stiffness: 300
+      }
     }
   };
 
@@ -94,10 +171,31 @@ const Header = () => {
 
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
+      {/* Animated Kids */}
+      {kidsImages.map((kid, index) => (
+        <motion.div
+          key={index}
+          className={`absolute ${kid.position} -top-12 hidden lg:block`}
+          custom={kid.delay}
+          initial="initial"
+          animate="animate"
+          variants={kidsAnimation}
+        >
+          <img
+            src={kid.url}
+            alt="Kid"
+            className="w-12 h-12 rounded-full border-2 border-white shadow-lg"
+          />
+        </motion.div>
+      ))}
+
       <div className="container mx-auto px-4">
         <nav className="relative flex items-center h-20">
-          {/* Logo container with consistent positioning */}
-          <div className="absolute left-4 flex items-center h-full">
+          {/* Animated Logo */}
+          <motion.div 
+            className="absolute left-4 flex items-center h-full"
+            animate={logoAnimation}
+          >
             <Link 
               to="/" 
               className="flex items-center flex-shrink-0"
@@ -110,61 +208,80 @@ const Header = () => {
                 loading="eager"
               />
             </Link>
-          </div>
+          </motion.div>
+
+          {/* Decorative Elements */}
+          <motion.div 
+            className="absolute left-28 top-2"
+            animate={floatingAnimation}
+          >
+            <Star className="w-6 h-6 text-yellow-400" />
+          </motion.div>
+          <motion.div 
+            className="absolute right-32 top-4"
+            animate={floatingAnimation}
+          >
+            <Heart className="w-6 h-6 text-pink-400" />
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-center flex-1 ml-32 space-x-6">
             {navItems.map((item) => (
-              <Link
+              <motion.div
                 key={item.name}
-                to={item.href}
-                className={`text-gray-700 font-semibold text-lg transition-all duration-300 relative
-                  ${item.hover} hover:scale-105 active:scale-95
-                  before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 
-                  before:h-0.5 before:rounded-full before:opacity-0 before:transition-all
-                  before:duration-300 hover:before:w-full hover:before:opacity-100
-                  before:bg-current
-                  ${location.pathname === item.href ? 'before:w-full before:opacity-100' : ''}`}
+                variants={navItemAnimation}
+                whileHover="hover"
+                whileTap="tap"
               >
-                {item.name}
-              </Link>
+                <Link
+                  to={item.href}
+                  className={`flex items-center space-x-2 text-gray-700 font-semibold text-sm transition-all duration-300 relative
+                    ${item.hover} hover:scale-105 active:scale-95
+                    before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 
+                    before:h-0.5 before:rounded-full before:opacity-0 before:transition-all
+                    before:duration-300 hover:before:w-full hover:before:opacity-100
+                    before:bg-current
+                    ${location.pathname === item.href ? 'before:w-full before:opacity-100' : ''}`}
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                </Link>
+              </motion.div>
             ))}
           </div>
 
-          {/* Phone Number Box with Animation */}
+          {/* Animated Phone Button */}
           <motion.a
             href="tel:+1234567890"
             className="hidden lg:flex items-center absolute right-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-semibold shadow-lg"
+            variants={phoneAnimation}
             whileHover="hover"
-            whileTap="tap"
-            variants={phoneBoxVariants}
+            whileTap={{ scale: 0.95 }}
           >
             <Phone className="w-4 h-4 mr-2" />
             <span>123-456-7890</span>
-            
-            {/* Animated Kids */}
-           
           </motion.a>
 
-          {/* Mobile Menu Button and Phone Number */}
+          {/* Mobile Menu Button and Phone */}
           <div className="lg:hidden flex items-center absolute right-4 space-x-4">
             <motion.a
               href="tel:+1234567890"
               className="flex items-center px-3 py-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white text-sm font-semibold shadow-md"
+              variants={phoneAnimation}
               whileHover="hover"
-              whileTap="tap"
-              variants={phoneBoxVariants}
+              whileTap={{ scale: 0.95 }}
             >
               <Phone className="w-3 h-3 mr-1" />
               <span>Call Us</span>
             </motion.a>
             
-            <button
+            <motion.button
               ref={buttonRef}
               className="p-2 rounded-full hover:bg-gray-100 
                 transition-colors duration-200 focus:outline-none focus:ring-2 
                 focus:ring-orange-500 focus:ring-offset-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              whileTap={{ scale: 0.9 }}
               aria-expanded={isMenuOpen}
               aria-label="Toggle menu"
             >
@@ -174,42 +291,60 @@ const Header = () => {
               ) : (
                 <Menu className="h-6 w-6 text-gray-600" aria-hidden="true" />
               )}
-            </button>
+            </motion.button>
           </div>
 
-          {/* Mobile Navigation with larger font */}
-          <div
-            ref={mobileMenuRef}
-            className={`lg:hidden fixed inset-0 top-20 z-40 transform transition-transform duration-300 ease-in-out
-              ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-          >
-            <div className="bg-white h-full shadow-xl">
-              <nav className="h-full overflow-y-auto pb-20">
-                <div className="px-4 py-2 space-y-1">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className={`block px-4 py-4 rounded-lg text-xl font-medium transition-colors duration-200
-                        ${item.hover} hover:bg-gray-50 active:bg-gray-100
-                        ${location.pathname === item.href ? 'bg-gray-50' : ''}`}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </nav>
-            </div>
-          </div>
+          {/* Animated Mobile Navigation */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                ref={mobileMenuRef}
+                className="lg:hidden fixed inset-0 top-20 z-40 bg-white shadow-xl"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", damping: 20 }}
+              >
+                <nav className="h-full overflow-y-auto pb-20">
+                  <div className="px-4 py-2 space-y-1">
+                    {navItems.map((item, index) => (
+                      <motion.div
+                        key={item.name}
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <Link
+                          to={item.href}
+                          className={`flex items-center space-x-3 px-4 py-4 rounded-lg text-lg font-medium transition-colors duration-200
+                            ${item.hover} hover:bg-gray-50 active:bg-gray-100
+                            ${location.pathname === item.href ? 'bg-gray-50' : ''}`}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {item.icon}
+                          <span>{item.name}</span>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </nav>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-          {/* Overlay */}
-          <div
-            className={`fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden transition-opacity duration-300
-              ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-            onClick={() => setIsMenuOpen(false)}
-            aria-hidden="true"
-          />
+          {/* Animated Overlay */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsMenuOpen(false)}
+                aria-hidden="true"
+              />
+            )}
+          </AnimatePresence>
         </nav>
       </div>
     </header>

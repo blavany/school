@@ -18,7 +18,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-400">
-              Providing quality early education and childcare services in a nurturing environment.
+            We prepare preschoolers for school.
             </p>
           </div>
 
@@ -42,18 +42,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/classes" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Classes
+                <Link to="/shop" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  shops
                 </Link>
               </li>
               <li>
-                <Link to="/teachers" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Teachers
+                <Link to="/news" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  News
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Portfolio
+                <Link to="/locations" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  Location
                 </Link>
               </li>
               <li>
@@ -67,8 +67,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-6">Contact Info</h3>
             <ul className="space-y-3 text-gray-400">
-              <li>28 Princeton Drive Syosset</li>
-              <li>New York  USA 11791</li>
+              <li>2400 Middle Road Bettendorf IA 52722 </li>
+              <li> USA </li>
               <li>Phone: +1 (315) 402-1234</li>
               <li>contact@b4-school.com</li>
             </ul>
@@ -77,9 +77,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-6">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <Facebook className="h-6 w-6" />
-              </a>
+            <a href="https://www.facebook.com/profile.php?id=100065696191087" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
+  <Facebook className="h-6 w-6" />
+</a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Twitter className="h-6 w-6" />
               </a>

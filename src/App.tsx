@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Classes from './pages/Classes';
 import Teachers from './pages/Teachers';
-import Portfolio from './pages/Portfolio';
+import News from './pages/News';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Activities from './pages/Activities';
@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsappAppButton';
 import ScrollTop from './components/ScrollTop';
+import LocationDetail from './pages/LocationDetails';
 function App() {
   return (
     <Router>
@@ -23,14 +24,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/teachers" element={<Teachers />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/news" element={<News />} />
           <Route path="/locations" element={<Locations />} />
-          <Route path="/shops" element={<Shop />} />
+          <Route path="/shop" element={<Shop />} />
 
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/activities" element={<Activities />} />
-
+          <Route path="/location/:id" element={<LocationDetail />} />
         </Routes>
        
     

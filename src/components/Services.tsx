@@ -36,7 +36,7 @@ const Services = () => {
     },
     {
       icon: <Clock className="w-12 h-12 text-red-500" />,
-      title: 'Extended Hours',
+      title: 'Child Watch',
       description: 'Flexible scheduling to accommodate working parents',
       features: ['Early drop-off', 'Late pickup', 'Weekend programs']
     }

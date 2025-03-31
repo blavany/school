@@ -34,7 +34,7 @@ const Teachers = () => {
       {/* Teacher Profiles Section */}
       <div className="bg-gradient-to-r from-blue-200 to-green-200 py-10">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">Meet Our Teachers</h2>
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-8"> Our Team</h2>
           <div className="flex flex-wrap justify-center gap-10">
             {teachers.map((teacher, index) => (
               <div key={index} className="flex flex-col items-center">

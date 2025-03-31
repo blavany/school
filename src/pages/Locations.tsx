@@ -20,7 +20,7 @@ interface LocationData {
 }
 
 const locationData: LocationData[] = [
-  // India Locations - Maharashtra
+ 
   {
     id: 'in-mh-mu-bandra',
     country: 'India',
@@ -54,7 +54,6 @@ const locationData: LocationData[] = [
  
  
 
-  // India Locations - Haryana
   {
     id: 'in-hr-ggn-sector56',
     country: 'India',
@@ -116,7 +115,6 @@ const locationData: LocationData[] = [
     programs: ['Nursery', 'Junior KG', 'Senior KG']
   },
 
-  // India Locations - Telangana
   {
     id: 'in-tg-hyd-banjara',
     country: 'India',
@@ -178,7 +176,6 @@ const locationData: LocationData[] = [
     programs: ['Toddler', 'Nursery', 'Kindergarten']
   },
 
-  // USA Locations - California
   {
     id: 'us-ca-sf-marina',
     country: 'USA',
@@ -210,18 +207,17 @@ const locationData: LocationData[] = [
     timings: '8:00 AM - 3:00 PM',
     programs: ['Infant Care', 'Toddler', 'Pre-K']
   },
- 
-  // USA Locations - New York
- 
-
-
-
-
 
  
+
+
+
+
+
+ 
  
 
-  // Zimbabwe Locations - Harare Province
+ 
   {
     id: 'zw-ha-ha-borrowdale',
     country: 'Zimbabwe',
@@ -487,18 +483,19 @@ const Locations = () => {
                   </div>
 
                   <button
-                    onClick={() => window.location.href = `mailto:${location.email}`}
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 flex items-center justify-center space-x-2"
-                  >
-                    <Mail className="w-5 h-5" />
-                    <span>Contact This Location</span>
-                  </button>
+  onClick={() => window.open("/", "_blank")} 
+  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 flex items-center justify-center space-x-2"
+>
+  <Mail className="w-5 h-5" />
+  <span>Click Here to Contact This Location</span>
+</button>
+
                 </div>
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
-
+a
         {filteredLocations.length === 0 && (
           <div className="text-center py-12">
             <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />

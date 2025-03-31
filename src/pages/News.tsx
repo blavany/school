@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../components/Footer';
 
-const Portfolio = () => {
+const News = () => {
   const portfolioItems = [
     {
       title: 'Art Exhibition',
@@ -44,7 +44,7 @@ const Portfolio = () => {
   return (
     <div className="pt-20 bg-gray-50">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Our Portfolio</h1>
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">News</h1>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioItems.map((item) => (
@@ -73,4 +73,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default News;

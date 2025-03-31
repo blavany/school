@@ -54,7 +54,8 @@ const Activities = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Our Activities</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">B4-School Core Curriculum
+          </h2>
           <p className="text-white max-w-4xl mx-auto">
             Engaging activities designed to nurture creativity, learning, and development in a fun environment.
           </p>

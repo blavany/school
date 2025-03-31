@@ -12,7 +12,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    
     console.log('Form submitted:', formData);
   };
 
@@ -29,7 +29,7 @@ const Contact = () => {
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Contact Us</h1>
         
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Information */}
+         
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h2>
@@ -38,7 +38,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-800">Address</h3>
-                    <p className="text-gray-600">28 Princeton Drive Syosset<br />, New York USA 11791</p>
+                    <p className="text-gray-600"> 2400 Middle Road Bettendorf IA 52722<br />USA</p>
                   </div>
                 </div>
                 
@@ -74,7 +74,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+    
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
