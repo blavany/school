@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsappAppButton';
 import ScrollTop from './components/ScrollTop';
-import LocationDetail from './pages/GlobalLocations';
+
 function App() {
   return (
     <Router>
@@ -31,7 +31,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/activities" element={<Activities />} />
-          <Route path="/location/:id" element={<LocationDetail />} />
+     
         </Routes>
        
     
