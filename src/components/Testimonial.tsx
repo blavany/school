@@ -31,12 +31,10 @@ const Testimonial = () => {
     },
   ];
 
-  const itemsPerPage = 3;
-  const totalSlides = Math.ceil(testimonials.length / itemsPerPage);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    if (currentSlide < totalSlides - 1) {
+    if (currentSlide < testimonials.length - 1) {
       setCurrentSlide((prev) => prev + 1);
     }
   };
@@ -48,38 +46,29 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="py-10 bg-gradient-to-r from-yellow-500 via-purple-500 to-orange-500 text-white">
+    <div className="py-10 bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
       <div className="container mx-auto px-4">
         <div className="mb-6">
-          <h2 className="text-3xl font-bold text-center mb-6">Testimonials</h2>
-          <div className="relative overflow-hidden bg-white p-6 rounded-lg shadow-md text-gray-800">
-            {/* Testimonials Wrapper */}
-            <div className="flex transition-transform duration-500 ease-in-out">
-              {testimonials
-                .slice(currentSlide * itemsPerPage, (currentSlide + 1) * itemsPerPage)
-                .map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 w-full md:w-1/3 px-3 text-center"
-                  >
-                    <img
-                      src={testimonial.image}
-                      alt={`Testimonial ${index}`}
-                      className="w-full h-[120px] object-cover rounded-md mb-3"
-                    />
-                    <p className="text-sm leading-relaxed mb-2">{testimonial.content}</p>
-                    <h3 className="text-blue-600 font-bold">{testimonial.name}</h3>
-                  </div>
-                ))}
+          <h2 className="text-4xl font-bold text-center mb-6">Testimonials</h2>
+          <div className="relative overflow-hidden bg-white p-8 rounded-lg shadow-md text-gray-800 max-w-2xl mx-auto">
+            {/* Testimonial Slide */}
+            <div className="text-center">
+              <img
+                src={testimonials[currentSlide].image}
+                alt={`Testimonial ${currentSlide}`}
+                className="w-full h-[200px] object-cover rounded-md mb-4"
+              />
+              <p className="text-lg leading-relaxed mb-4">{testimonials[currentSlide].content}</p>
+              <h3 className="text-blue-600 font-bold text-xl">{testimonials[currentSlide].name}</h3>
             </div>
 
             {/* Navigation Arrows */}
-            {testimonials.length > itemsPerPage && (
+            {testimonials.length > 1 && (
               <>
                 <button
                   onClick={prevSlide}
                   disabled={currentSlide === 0}
-                  className={`absolute left-2 top-[50%] transform -translate-y-[50%] bg-blue-500 text-white p-2 rounded-full ${
+                  className={`absolute left-4 top-[50%] transform -translate-y-[50%] bg-blue-500 text-white p-3 rounded-full shadow-lg $ {
                     currentSlide === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600"
                   }`}
                 >
@@ -87,9 +76,9 @@ const Testimonial = () => {
                 </button>
                 <button
                   onClick={nextSlide}
-                  disabled={currentSlide >= totalSlides - 1}
-                  className={`absolute right-2 top-[50%] transform -translate-y-[50%] bg-blue-500 text-white p-2 rounded-full ${
-                    currentSlide >= totalSlides - 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600"
+                  disabled={currentSlide >= testimonials.length - 1}
+                  className={`absolute right-4 top-[50%] transform -translate-y-[50%] bg-blue-500 text-white p-3 rounded-full shadow-lg $ {
+                    currentSlide >= testimonials.length - 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600"
                   }`}
                 >
                   &#8594;

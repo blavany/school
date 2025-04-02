@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Phone, Star, Heart, Sun, MapPin, Book, Users, Image, Mail,Newspaper } from 'lucide-react';
+import { Menu, X, Phone, Star, Heart, Sun, MapPin, Book, Users, Image, Mail, Newspaper } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from './images/logo/B4 School Logo.png';
@@ -15,12 +15,21 @@ const Header = () => {
     { name: 'About', href: '/about', hover: 'hover:text-orange-700', icon: <Star className="w-4 h-4" /> },
     { name: 'Activities', href: '/activities', hover: 'hover:text-pink-700', icon: <Sun className="w-4 h-4" /> },
     { name: 'Locations', href: '/locations', hover: 'hover:text-purple-700', icon: <MapPin className="w-4 h-4" /> },
-    // { name: 'Classes', href: '/classes', hover: 'hover:text-green-700', icon: <Book className="w-4 h-4" /> },
-    // { name: 'Teachers', href: '/teachers', hover: 'hover:text-yellow-700', icon: <Users className="w-4 h-4" /> },
-     { name: 'Shop', href: '/shop', hover: 'hover:text-yellow-700', icon: <Users className="w-4 h-4" /> },
-
+    { name: 'Shop', href: '/shop', hover: 'hover:text-yellow-700', icon: <Users className="w-4 h-4" /> },
     { name: 'News', href: '/news', hover: 'hover:text-blue-700', icon: <Newspaper className="w-4 h-4" /> },
     { name: 'Contact', href: '/contact', hover: 'hover:text-indigo-700', icon: <Mail className="w-4 h-4" /> },
+  ];
+
+  // Decorative elements positions
+  const decorativeElements = [
+    { element: <Star className="w-6 h-6 text-yellow-400" />, position: "left-28 top-2", delay: 0 },
+    { element: <Star className="w-5 h-5 text-yellow-300" />, position: "left-40 top-4", delay: 0.2 },
+    { element: <Heart className="w-6 h-6 text-pink-400" />, position: "right-32 top-4", delay: 0.4 },
+    { element: <Star className="w-4 h-4 text-yellow-500" />, position: "right-40 top-2", delay: 0.6 },
+    { element: <Star className="w-5 h-5 text-yellow-400" />, position: "left-52 top-3", delay: 0.8 },
+    { element: <Star className="w-4 h-4 text-yellow-300" />, position: "right-48 top-5", delay: 1 },
+    { element: <Star className="w-6 h-6 text-yellow-500" />, position: "left-64 top-4", delay: 1.2 },
+    { element: <Star className="w-5 h-5 text-yellow-400" />, position: "right-56 top-3", delay: 1.4 }
   ];
 
   // Kids images for animation
@@ -76,13 +85,25 @@ const Header = () => {
 
   // Floating animation for decorative elements
   const floatingAnimation = {
-    y: [-10, 10],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "easeInOut"
-    }
+    animate: (delay: number) => ({
+      y: [-10, 10],
+      rotate: [0, 360],
+      transition: {
+        y: {
+          duration: 2,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+          delay: delay
+        },
+        rotate: {
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear",
+          delay: delay
+        }
+      }
+    })
   };
 
   // Bouncing animation for logo
@@ -211,18 +232,17 @@ const Header = () => {
           </motion.div>
 
           {/* Decorative Elements */}
-          <motion.div 
-            className="absolute left-28 top-2"
-            animate={floatingAnimation}
-          >
-            <Star className="w-6 h-6 text-yellow-400" />
-          </motion.div>
-          <motion.div 
-            className="absolute right-32 top-4"
-            animate={floatingAnimation}
-          >
-            <Heart className="w-6 h-6 text-pink-400" />
-          </motion.div>
+          {decorativeElements.map((item, index) => (
+            <motion.div
+              key={index}
+              className={`absolute ${item.position} hidden lg:block`}
+              custom={item.delay}
+              animate="animate"
+              variants={floatingAnimation}
+            >
+              {item.element}
+            </motion.div>
+          ))}
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-center flex-1 ml-32 space-x-6">

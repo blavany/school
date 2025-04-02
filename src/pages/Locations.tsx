@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Users, GraduationCap, Navigation } from 'lucide-react';
 import Footer from '../components/Footer';
+// import GlobalLocations from './GlobalLocations';
+// import GlobalLocations from './GlobalLocations';
 
 interface LocationData {
   id: string;
@@ -313,6 +315,7 @@ const Locations = () => {
             and facilities tailored to local communities.
           </p>
         </div>
+        {/* <GlobalLocations/> */}
 
         {/* Filter Section */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
