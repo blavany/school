@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Slide1 from "./images/logo/header image1.avif";
+import Slide1 from "./images/logo/headerimage1.avif";
 import Slide2 from "./images/logo/headerimage2.jpg";
 import Slide3 from "./images/logo/headerimage4.jpg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";

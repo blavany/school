@@ -9,7 +9,7 @@ const Activities = () => {
       icon: <BookOpen className="w-12 h-12 text-blue-500" />,
       title: 'English',
       description: 'Building strong language and communication skills',
-      color: 'bg-blue-50',
+      color: 'bg-blue-100',
       images: [
         'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=800&q=80',
@@ -20,7 +20,7 @@ const Activities = () => {
       icon: <Palette className="w-12 h-12 text-pink-500" />,
       title: 'Art',
       description: 'Fostering creativity and artistic expression',
-      color: 'bg-pink-50',
+      color: 'bg-pink-100',
       images: [
         'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?auto=format&fit=crop&w=800&q=80',
@@ -31,7 +31,7 @@ const Activities = () => {
       icon: <Calculator className="w-12 h-12 text-purple-500" />,
       title: 'Math',
       description: 'Developing logical thinking and problem-solving skills',
-      color: 'bg-purple-50',
+      color: 'bg-purple-100',
       images: [
         'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=800&q=80',
@@ -42,7 +42,7 @@ const Activities = () => {
       icon: <Running className="w-12 h-12 text-green-500" />,
       title: 'Physical Education',
       description: 'Promoting health and physical development',
-      color: 'bg-green-50',
+      color: 'bg-green-100',
       images: [
         'https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80',
@@ -53,7 +53,7 @@ const Activities = () => {
       icon: <Bus className="w-12 h-12 text-yellow-500" />,
       title: 'Field Trips',
       description: 'Learning through real-world experiences',
-      color: 'bg-yellow-50',
+      color: 'bg-yellow-100',
       images: [
         'https://images.unsplash.com/photo-1521464302861-ce943915d1c3?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80',
@@ -64,7 +64,7 @@ const Activities = () => {
       icon: <Calendar className="w-12 h-12 text-red-500" />,
       title: 'Events',
       description: 'Celebrating learning through special occasions',
-      color: 'bg-red-50',
+      color: 'bg-red-100',
       images: [
         'https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80',

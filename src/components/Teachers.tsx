@@ -1,24 +1,28 @@
 import React from 'react';
 import { Heart, Brain, Star } from 'lucide-react';
+import image1 from './images/logo/ourteam1.jpg'
+import image2 from './images/logo/ourteam2.avif'
+import image3 from './images/logo/ourteam3.jpg'
+
 
 const Teachers = () => {
   const teachers = [
     {
       name: 'John Doe',
       role: 'Math Teacher',
-      image: 'https://www.leadershipbroward.org/wp-content/uploads/2017/06/photodune-3458394-teacher-m.jpg',
+      image: image1,
       backgroundColor: 'bg-blue-200',
     },
     {
       name: 'Jane Smith',
       role: 'English Teacher',
-      image: 'https://img.freepik.com/premium-photo/kindergarten-teacher-playing-with-children_464463-777.jpg',
+      image: image2,
       backgroundColor: 'bg-green-200',
     },
     {
       name: 'Bob Johnson',
       role: 'Science Teacher',
-      image: 'https://t4.ftcdn.net/jpg/02/15/27/85/360_F_215278578_ALaCqniUHq0YhMR9dSk6eSfLH9hJ6KJ6.jpg',
+      image: image3,
       backgroundColor: 'bg-yellow-200',
     },
     {

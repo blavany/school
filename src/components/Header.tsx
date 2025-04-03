@@ -32,56 +32,8 @@ const Header = () => {
     { element: <Star className="w-5 h-5 text-yellow-400" />, position: "right-56 top-3", delay: 1.4 }
   ];
 
-  // Kids images for animation
-  const kidsImages = [
-    {
-      url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=100&h=100&q=80",
-      position: "left-0",
-      delay: 0
-    },
-    {
-      url: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=100&h=100&q=80",
-      position: "left-1/4",
-      delay: 1
-    },
-    {
-      url: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=100&h=100&q=80",
-      position: "right-1/4",
-      delay: 2
-    },
-    {
-      url: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=100&h=100&q=80",
-      position: "right-0",
-      delay: 3
-    }
-  ];
+ 
 
-  // Kids animation variants
-  const kidsAnimation = {
-    initial: (delay: number) => ({
-      y: -100,
-      opacity: 0,
-      transition: {
-        delay: delay * 0.2
-      }
-    }),
-    animate: (delay: number) => ({
-      y: [0, -10, 0],
-      opacity: 1,
-      transition: {
-        y: {
-          repeat: Infinity,
-          duration: 2,
-          delay: delay * 0.2,
-          ease: "easeInOut"
-        },
-        opacity: {
-          duration: 0.5,
-          delay: delay * 0.2
-        }
-      }
-    })
-  };
 
   // Floating animation for decorative elements
   const floatingAnimation = {
@@ -192,23 +144,8 @@ const Header = () => {
 
   return (
     <header className="fixed w-full bg-white shadow-md z-50">
-      {/* Animated Kids */}
-      {kidsImages.map((kid, index) => (
-        <motion.div
-          key={index}
-          className={`absolute ${kid.position} -top-12 hidden lg:block`}
-          custom={kid.delay}
-          initial="initial"
-          animate="animate"
-          variants={kidsAnimation}
-        >
-          <img
-            src={kid.url}
-            alt="Kid"
-            className="w-12 h-12 rounded-full border-2 border-white shadow-lg"
-          />
-        </motion.div>
-      ))}
+  
+     
 
       <div className="container mx-auto px-4">
         <nav className="relative flex items-center h-20">
@@ -233,16 +170,16 @@ const Header = () => {
 
           {/* Decorative Elements */}
           {decorativeElements.map((item, index) => (
-            <motion.div
-              key={index}
-              className={`absolute ${item.position} hidden lg:block`}
-              custom={item.delay}
-              animate="animate"
-              variants={floatingAnimation}
-            >
-              {item.element}
-            </motion.div>
-          ))}
+  <motion.div
+    key={index}
+    className={`absolute ${item.position} block`} // Removed "hidden lg:block"
+    custom={item.delay}
+    animate="animate"
+    variants={floatingAnimation}
+  >
+    {item.element}
+  </motion.div>
+))}
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-center flex-1 ml-32 space-x-6">
@@ -279,13 +216,13 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Phone className="w-4 h-4 mr-2" />
-            <span>123-456-7890</span>
+            <span>+1(315)402-1234</span>
           </motion.a>
 
           {/* Mobile Menu Button and Phone */}
           <div className="lg:hidden flex items-center absolute right-4 space-x-4">
             <motion.a
-              href="tel:+1234567890"
+              href="tel:+1(315)402-1234"
               className="flex items-center px-3 py-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white text-sm font-semibold shadow-md"
               variants={phoneAnimation}
               whileHover="hover"

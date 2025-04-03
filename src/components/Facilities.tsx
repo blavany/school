@@ -1,45 +1,52 @@
 import React from 'react';
 import { Book, PlayCircle, Monitor, Music, Utensils, Heart } from 'lucide-react';
+import image1 from './images/logo/activity1.avif'
+import image2 from './images/logo/facilities2.jpeg'
+
+import image3 from './images/logo/facilities3.jpeg'
+import image4 from './images/logo/facilities4.jpg'
+import image5 from './images/logo/facilities5.jpg'
+import image6 from './images/logo/facilities6.jpg'
 
 const Facilities = () => {
   const facilities = [
     {
-      image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80',
+      image: image1,
       icon: <Book className="w-8 h-8" />,
       title: 'Modern Library',
       description: 'A vast collection of children',
       features: ['Interactive reading sessions', 'Digital learning resources', 'Comfortable reading spaces']
     },
     {
-      image: 'https://5.imimg.com/data5/SELLER/Default/2023/6/319286839/QX/TB/BT/44179044/outdoor-playground-equipment.jpeg',
+      image: image2,
       icon: <PlayCircle className="w-8 h-8" />,
       title: 'Play Area',
       description: 'Safe and engaging outdoor playground equipment',
       features: ['Age-appropriate equipment', 'Soft play surfaces', 'Covered areas']
     },
     {
-      image: 'https://preprimaryschools.com/assets/uploads/school/home/25042022014006_834428_Wonder-Kidz-Smart-Play-School-Anantapur-(3).jpg',
+      image: image3,
       icon: <Monitor className="w-8 h-8" />,
       title: 'Smart Classrooms',
       description: 'Technology-enabled learning environments',
       features: ['Interactive whiteboards', 'Educational software', 'Digital learning tools']
     },
     {
-      image: 'https://live.staticflickr.com/4415/35561488273_dcccec0be7_b.jpg',
+      image: image4,
       icon: <Music className="w-8 h-8" />,
       title: 'Music Room',
       description: 'Dedicated space for musical exploration and learning',
       features: ['Musical instruments', 'Sound-proof rooms', 'Performance area']
     },
     {
-      image: 'https://images.adsttc.com/media/images/5553/ffdf/e58e/ce16/aa00/00af/large_jpg/KHB311_d_65315-4.jpg?1431568339',
+      image: image5,
       icon: <Utensils className="w-8 h-8" />,
       title: 'Dining Area',
       description: 'Clean and comfortable space for meals and snacks',
       features: ['Hygienic environment', 'Nutritious meals', 'Dietary accommodations']
     },
     {
-      image: 'https://t4.ftcdn.net/jpg/06/22/58/09/360_F_622580935_LXvKNp40MuAqaU8VUAuErbtj9TeZVRWc.jpg',
+      image: image6,
       icon: <Heart className="w-8 h-8" />,
       title: 'Medical Room',
       description: 'Well-equipped facility for basic medical care',
